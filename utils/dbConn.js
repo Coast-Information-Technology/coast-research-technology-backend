@@ -1,7 +1,9 @@
-// dbConn.js
 import mongoose from "mongoose";
 
 export const databaseConnection = () => {
+    // Set the strictQuery option to false
+    mongoose.set('strictQuery', false);
+
     mongoose
         .connect(process.env.DB_CONNECTION, {
             useNewUrlParser: true,
@@ -22,6 +24,7 @@ export const databaseConnection = () => {
             mongoose.connection.on('disconnected', () => {
                 console.log('MongoDB disconnected');
             });
+
         })
         .catch((err) => {
             console.error(`Error connecting to database: ${err}`);

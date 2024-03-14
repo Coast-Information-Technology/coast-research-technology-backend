@@ -14,14 +14,26 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
     fromGoogle: {
       type: Boolean,
       default: false,
     },
     role: {
       type: String,
-      enum: ['admin', 'user'],
-      default: "user",
+      enum: ['admin', 'student', "recruit team", "instructor"],
+      default: "student",
     },
     resetPasswordToken: {
       type: String,
