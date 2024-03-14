@@ -18,7 +18,7 @@ const PlacementSchema = new mongoose.Schema(
         },
         salaryOffer: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Salary", // Ensure this matches the name of your Candidate model
+            ref: "Salary", // Ensure this matches the name of your Salary model
             required: true
         },
         ContractDetails: {
