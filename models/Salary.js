@@ -13,8 +13,28 @@ const SalarySchema = new mongoose.Schema({
         type: String,
         enum: ['per annum', 'per month', 'per week', 'per day', 'per hour'],
         required: true
+    },
+    basicSalary: {
+        type: Number,
+    },
+    houseRentAllowance: {
+        type: Number,
+    },
+    transportation: {
+        type: Number,
+    },
+    hmo: {
+        type: Number,
+    },
+    pension: {
+        type: Number,
+    },
+    paye: {
+        type: Number,
+    },
+    others: {
+        type: Number,
     }
-    basicSalary
 });
 
 export default mongoose.model("Salary", SalarySchema);
