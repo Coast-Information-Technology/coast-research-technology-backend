@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const SalarySchema = new mongoose.Schema({
+export const SalarySchema = new mongoose.Schema({
     amount: {
         type: Number,
         required: true
@@ -36,5 +36,3 @@ const SalarySchema = new mongoose.Schema({
         type: Number,
     }
 });
-
-export default mongoose.model("Salary", SalarySchema);

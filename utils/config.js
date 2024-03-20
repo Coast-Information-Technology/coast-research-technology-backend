@@ -3,11 +3,17 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
 
-// import all endpoint file path
+// Import routes
 import authRoutes from "../routes/auth.js";
 import userRoutes from "../routes/user.js";
+import candidateRoutes from "../routes/candidate.js";
+import jobPositionRoutes from "../routes/jobPosition.js";
+import clientRoutes from "../routes/client.js";
+import interviewResultRoutes from "../routes/interviewResult.js";
+import placementRoutes from "../routes/placement.js";
+import applicationRoutes from "../routes/application.js";
 
-export const configureMiddleware = (app) => {
+export const config = (app) => {
     app.use(cookieParser());
     // CORS configuration
     const corsOptions = {
@@ -19,8 +25,15 @@ export const configureMiddleware = (app) => {
     app.use(express.json());
 
     // App endpoints paths
-    app.use("/api/auth", authRoutes);
-    app.use("/api/users", userRoutes);
+    app.use("/api/authentication", authRoutes);
+    app.use("/api/user", userRoutes);
+    app.use("/api/candidate", candidateRoutes);
+    app.use("/api/job-positions", jobPositionRoutes);
+    app.use("/api/client-companies", clientRoutes);
+    app.use("/api/interview-results", interviewResultRoutes);
+    app.use("/api/placements", placementRoutes);
+    app.use("/api/applications", applicationRoutes);
+
     // ADD REST OF THE APP PATHS HERE
 
 

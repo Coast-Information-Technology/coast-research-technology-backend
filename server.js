@@ -2,7 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { envChecker } from "./utils/utility.js";
-import { configureMiddleware } from "./utils/middleware.js";
+import { config } from "./utils/config.js";
 import { databaseConnection } from "./utils/dbConn.js";
 
 const app = express();
@@ -17,7 +17,7 @@ try {
 }
 
 // Middleware
-configureMiddleware(app);
+config(app);
 
 // Connecting to MongoDB
 databaseConnection();

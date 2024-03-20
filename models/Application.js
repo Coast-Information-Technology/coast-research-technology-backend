@@ -21,18 +21,6 @@ const ApplicationSchema = new mongoose.Schema(
             enum: ["Pending", "Reviewed", "Rejected", "Accepted"],
             default: "Pending"
         },
-        referee1: {
-            type: RefereeSchema,
-            required: true
-        },
-        referee2: {
-            type: RefereeSchema,
-            required: true
-        },
-        referee3: {
-            type: RefereeSchema,
-            required: true
-        }
     },
     { timestamps: true }
 );

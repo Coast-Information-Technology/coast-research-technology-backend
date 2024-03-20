@@ -1,13 +1,11 @@
 import mongoose from "mongoose";
+import { EducationSchema } from "./Education.js";
+import { ExperienceSchema } from "./Experience.js";
+import { SkillSchema } from "./Skill.js";
 
 const CandidateSchema = new mongoose.Schema(
     {
-        CandidateID: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            unique: true
-        },
-        Name: {
+        name: {
             type: String,
             required: true
         },
@@ -16,25 +14,27 @@ const CandidateSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
-        Phone: {
+        phone: {
             type: String,
             required: true
         },
-        Address: {
+        address: {
             type: String
         },
-        Education: {
-            type: String
+        educations: {
+            type: [EducationSchema],
+            default: []
         },
-        Experience: {
-            type: String
+        experiences: {
+            type: [ExperienceSchema],
+            default: []
         },
-        Resume: {
-            type: String
-        },
-        Skills: {
+        skills: {
             type: [SkillSchema],
             default: []
+        },
+        resume: {
+            type: String
         }
     },
     { timestamps: true }

@@ -16,7 +16,7 @@ const InterviewResultSchema = new mongoose.Schema(
             required: true
         },
         ratings: {
-            type: number,
+            type: Number,
             required: true
         },
         status: {

@@ -7,6 +7,11 @@ const PlacementSchema = new mongoose.Schema(
             ref: "Candidate", // Ensure this matches the name of your Candidate model
             required: true
         },
+        client: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "ClientCompany", // Ensure this matches the name of your Candidate model
+            required: true
+        },
         position: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "JobPosition", // Ensure this matches the name of your JobPosition model

@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { SkillSchema } from "./Skill.js";
+import { SalarySchema } from "./Salary.js";
 
 const JobPositionSchema = new mongoose.Schema(
     {
